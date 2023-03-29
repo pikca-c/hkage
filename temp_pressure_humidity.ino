@@ -5,7 +5,6 @@
 #define I2C_ADDRESS 0x77
 
 
-
 SHTSensor sht;
 BMP180I2C bmp180(I2C_ADDRESS);
 
@@ -13,7 +12,7 @@ BMP180I2C bmp180(I2C_ADDRESS);
 // SHTSensor sht(SHTSensor::SHT3X);
 
 void setup() {
-  // put your setup code here, to run once:
+  // run once:
 
   Wire.begin();
   Serial.begin(9600);
@@ -39,7 +38,7 @@ if (!bmp180.begin())
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // run repeatedly:
 
   if (sht.readSample()) {
       Serial.print("SHT:\n");
